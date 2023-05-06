@@ -14,20 +14,21 @@ direccion -> texto
 ciudad
 fecha de nacimiento*/
 
-var personas=[]
 var pdatos=[]
+var personas=[]
 
-pdatos.push({id:1,apellido:"davalos",nombre: "ivan", cin:5549165,fecha_nac:"01/11/2002", ciudad_id:1, direccion:"Pacu Cua" })
-pdatos.push({id:2,apellido:"Pereira",nombre: "abril", cin:5576308,fecha_nac:"11/04/2003", ciudad_id:2, direccion:"San Pedro" })
-pdatos.push({id:3,apellido:"Oleñik",nombre: "mario", cin:5556302,fecha_nac:"11/04/2003", ciudad_id:2, direccion:"San Pedro" })
+pdatos.push({id:1,apellido:"davalos",nombre: "ivan", cin:"5549165",fecha_nac:"2002-11-22", ciudad_id:1, direccion:"Pacu Cua" })
+pdatos.push({id:2,apellido:"Pereira",nombre: "abril", cin:"5576308",fecha_nac:"2003-04-11", ciudad_id:2, direccion:"San Pedro" })
+pdatos.push({id:3,apellido:"Oleñik",nombre: "mario", cin:"5556302",fecha_nac:"2002-04-03", ciudad_id:2, direccion:"San Pedro" })
 console.log(pdatos)
 
 function pcargar()
 {
-    var data=localStorage.getItem("personas");
+    var data = localStorage.getItem("data");
     //recupera datos del local storage
     if (!data || data=="")
     {
+        console.log("entro a cargar");
         let aux=JSON.stringify(pdatos);
         personas=JSON.parse(aux);
         //personas=JSON.parse(JSON.stringify(pdatos));
@@ -36,7 +37,7 @@ function pcargar()
         //en caso de existir se asignan los datos al array personas
         personas=JSON.parse(data);
     }
-    console.log(personas);
+    ////console.log(personas);
     dibujarTabla();  
 }
 
@@ -79,12 +80,12 @@ function dibujarTabla()
     
 function addEventosClk()/// desde acá se agregan las funciones onclk
 {
-    var btnpeditar=  document.getElementsByClassName('btedit');
+    var btnPeditar=  document.getElementsByClassName('btedit');
     /// console.log(btnEditar.length);
-    for (let i=0; i<btnpeditar.length;i++)
+    for (let i=0; i<btnPeditar.length;i++)
     {
-        btnpeditar[i].addEventListener("click", clkpeditar);
-        // console.log(btnEditar[i]);
+        btnPeditar[i].addEventListener("click", clkpeditar);
+        // console.log(btnPeditar[i]);
     }
     var btnuevo=document.getElementById("btnew");
     btnew.addEventListener("click", clknuevo);
@@ -94,7 +95,7 @@ function addEventosClk()/// desde acá se agregan las funciones onclk
     for (let i = 0; i < btnborrar.length; i++) 
     {
 		btnborrar[i].addEventListener("click", clkborrar);
-		// console.log(btnEditar[i]);
+		// console.log(btnPeditar[i]);
 	}
     console.log("Los eventos fueron cargados")
 }
@@ -106,9 +107,9 @@ function clknuevo()
     document.getElementById("id").value =-1;
     document.getElementById("apellido").value ="";
 	document.getElementById("nombre").value ="";
-    document.getElementById("cin").value ="";
-    document.getElementById("fecha_nac").value ="";
-    document.getElementById("ciudad_id").value ="";
+    document.getElementById("Nro").value ="";
+    document.getElementById("fecha").value ="";
+    document.getElementById("ciudad").value ="";
     document.getElementById("direccion").value ="";             
 }
 
@@ -116,17 +117,16 @@ function clkpeditar(e)
 {
 	///alert("pasa por editar");
 	eid=e.target.getAttribute('data-id');
-    personas.forEach((item) =>
-    { 
+    personas.forEach( (item) =>{ 
         if (item.id==eid)
         {
             console.log(item);
             document.getElementById('id').value=item.id;  
-            document.getElementById("nombre").value = item.nombre;
             document.getElementById("apellido").value = item.apellido;
-            document.getElementById("cin").value = item.cin;
-            document.getElementById("fecha_nac").value = item.fecha_nac;
-            document.getElementById("ciudad_id").value = item.ciudad_id;
+            document.getElementById("nombre").value = item.nombre;
+            document.getElementById("Nro").value = item.cin;
+            document.getElementById("fecha").value = item.fecha_nac;
+            document.getElementById("ciudad").value = item.ciudad_1;
             document.getElementById("direccion").value = item.direccion;     
         }
     });
@@ -139,8 +139,7 @@ function clkborrar(e)
     eid = e.target.getAttribute("data-id");
     //console.log(e.target.getAttribute("data-id"));
     console.log(personas);
-    personas.forEach((item,idx) => 
-    {
+    personas.forEach( (item,idx) => {
         if (item.id==eid)
         {
             personas.splice(idx,1);   
@@ -157,9 +156,9 @@ function guardar()
     var gid = document.getElementById("id").value;
     var gapellido = document.getElementById("apellido").value;
     var gnombre = document.getElementById("nombre").value;
-    var gcin = document.getElementById("cin").value;
-    var gfecha_nac = document.getElementById("fecha_nac").value;
-    var gciudad_id = document.getElementById("ciudad_id").value;
+    var gcin = document.getElementById("Nro").value;
+    var gfecha_nac = document.getElementById("fecha").value;
+    var gciudad_id = document.getElementById("ciudad").value;
     var gdireccion = document.getElementById("direccion").value;        
     console.log(gid+" - "+gapellido+" - "+gnombre+" - "+gcin+" - "+gfecha_nac+" - "+gciudad_id+" - "+gdireccion);	
     if (gid==-1)
@@ -170,7 +169,7 @@ function guardar()
     }else
     {
         console.log("editar item")
-        personas.forEach((e) =>
+        personas.forEach( (e) =>
         {
             if (gid==e.id) 
             { 
@@ -193,4 +192,4 @@ function persistir()
     localStorage.setItem("data",JSON.stringify(personas));
 }
 
-window.addEventListener("load", cargar);
+window.addEventListener("load", pcargar);
