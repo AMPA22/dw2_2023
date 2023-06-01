@@ -6,9 +6,9 @@
     if ($_POST['nombre'])
         {
         if ($_POST['id']==-1){
-        agregarCiudad($_POST,$conexion);  
+        agregarCiudad($_POST,$conn);  
         }  else {
-        editarCiudad($_POST,$conexion);
+        editarCiudad($_POST,$conn);
         }
         }
  }

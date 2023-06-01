@@ -29,4 +29,11 @@ function borrarCiudad($id,$con)
     $filas=$con->query($sql);
     return $filas;
 }
+function traerCiudadNombre($id,$con)
+{
+    $sql="SELECT nombre FROM ciudades where id=".$id;
+    $filas=$con->query($sql);
+    $dato=$filas->fetch_assoc();
+    return $dato['nombre'] ;
+}
 ?>

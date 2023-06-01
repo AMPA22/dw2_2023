@@ -1,7 +1,7 @@
 <?php
 // include("libs/conex.php");
 // include("libs/ciudades.lib.php");
-$datos=traerCiudades($conexion);
+$datos=traerCiudades($conn);
 //echo "<pre>";
 // foreach($datos as $d)
 // {

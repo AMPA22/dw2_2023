@@ -6,7 +6,7 @@ if ($_GET and $_GET['id'])
     {
        // echo $_GET['id'];
         $titulo="Editar Ciudad";
-        $rs=traerCiudad($_GET['id'],$conexion);
+        $rs=traerCiudad($_GET['id'],$conn);
         //echo "<pre>";
         $dato=$rs->fetch_assoc();
        // echo "</pre>";

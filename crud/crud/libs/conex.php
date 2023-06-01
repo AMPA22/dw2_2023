@@ -1,4 +1,5 @@
-<!--</?php
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
 $servidor="localhost"; // ip o direccion e la base e datos
 $usuario="dw2_user";
 $password="dw2_user";
@@ -10,4 +11,4 @@ if($conn->connect_error)
 }
 //echo "conectado";
 
-?> -->
+?>

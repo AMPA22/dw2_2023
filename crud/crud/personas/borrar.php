@@ -4,10 +4,10 @@
 if ($_GET and $_GET['id'])
     {
        // echo $_GET['id'];
-        $rs=borrarCiudad($_GET['id'],$conexion);
+        $rs=borrarPersona($_GET['id'],$conn);
         //echo "<pre>";
         //$dato=$rs->fetch_assoc();
        // echo "</pre>";
     }
-  header('Location:index.php');   
+  header('Location:index.php?mod=persona&accion=lst');   
     ?>

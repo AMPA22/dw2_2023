@@ -4,7 +4,7 @@
 if ($_GET and $_GET['id'])
     {
        // echo $_GET['id'];
-        $rs=borrarCiudad($_GET['id'],$conexion);
+        $rs=borrarCiudad($_GET['id'],$conn);
         //echo "<pre>";
         //$dato=$rs->fetch_assoc();
        // echo "</pre>";
