@@ -39,7 +39,7 @@ if ($_GET and isset($_GET['id']))
            <input type="hidden" id="id" name="id" value="<?php 
            echo $dato['id'];
             ?>" />
-            <label>Nonbre</label><br>
+            <label>Nombre</label><br>
            <input type="text" id="nombre" name="nombre" required value="<?php 
           // if (isset($dato['nombre'])) { echo $dato['nombre']; }
            echo $dato['nombre'];
@@ -66,7 +66,7 @@ if ($_GET and isset($_GET['id']))
                     <?php
                      foreach($cdatos as $c) { ?>
 
-                     <option value="<?php echo $c["id"]; ?>" <?php if ($c["id"]==$dato['ciudad_id']) { echo "selected"; } ?> ><?php echo $c["nombre"]; ?> </option>
+                     <option value="<?php echo $c["Id"]; ?>" <?php if ($c["Id"]==$dato['ciudad_id']) { echo "selected"; } ?> ><?php echo $c["nombre"]; ?> </option>
 
              
                    <?php  } ?>

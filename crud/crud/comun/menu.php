@@ -1,18 +1,16 @@
 <div>
-<ul class="list-unstyled">
-<li class=" ">
-    <a href="#" class="btn btn-secondary">Inicio</a>
-</li>
-<li>
-    <a href="index.php?mod=ciudades" class="btn">Ciudades</a>
-</li>
-<li>
-    <a href="personas/" class="btn">Personas</a>
-</li>
-<li>
-    <a href="#" class="btn">Salir</a>
-</li>
-</ul>
+    <ul class="list-group">
+        <li class=" ">
+            <a href="#" style="color:bisque" class="btn btn-secondary">Inicio</a>
+        </li>
+        <li>
+            <a href="index.php?mod=ciudades" style="color:bisque" class="btn btn-success">Ciudades</a>
+        </li>
+        <li>
+            <a href="personas/" style="color:bisque" class="btn btn-success">Personas</a>
+        </li>
+        <li>
+            <a href="#" style="color:bisque" class="btn btn-danger">Salir</a>
+        </li>
+    </ul>
 </div>
-
-        

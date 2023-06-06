@@ -2,9 +2,9 @@
 $datos=traerPersonas($conn);
 ?>    
     
-    <h1>Personas</h1>
+    <h1 >Personas</h1>
     <a href="index.php?mod=persona&accion=nuevo">Nuevo</a>
-    <table border=1>
+    <table style="border-color:brown" border=1>
         <thead>
             <tr>
                 <th>Id</th>

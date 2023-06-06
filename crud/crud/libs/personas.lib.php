@@ -20,7 +20,7 @@ function agregarPersona($datos,$con)
 function editarPersona($datos,$con)
 {
     // update personas set nombre = CAMPO where id= ID
-  echo  $sql="update personas set nombre ='".$datos['nombre']."' " 
+  $sql="update personas set nombre ='".$datos['nombre']."' " 
             .", apellido =  '".$datos['apellido']."' " 
             .", cin =  '".$datos['cin']."' "    
             .", direccion =  '".$datos['direccion']."' "

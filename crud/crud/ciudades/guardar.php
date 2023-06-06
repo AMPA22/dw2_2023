@@ -14,4 +14,3 @@
  }
  header('Location:../index.php?mod=ciudades');
 ?>
-<p>soy guardar</p>

@@ -11,3 +11,4 @@ if ($_GET and $_GET['id'])
     }
   header('Location:index.php');   
     ?>
+

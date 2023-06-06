@@ -18,7 +18,7 @@ $datos=traerCiudades($conn);
 </head>
 <body>
     <h1>Ciudades</h1>
-    <a href="nuevo.php">Nuevo</a>
+    <a class="btn btn-success" href="ciudades/nuevo.php">Nuevo</a>
     <table border=1>
         <thead>
             <tr>
@@ -34,10 +34,10 @@ $datos=traerCiudades($conn);
                 foreach($datos as $d) {
                 ?>
              <tr>    
-                <td><?php echo $d['id'];  ?> </td>
+                <td><?php echo $d['Id'];  ?> </td>
                 <td><?php echo $d['nombre'];  ?></td>
-                <td><a href="index.php?mod=edtciudad&&id=<?php  echo $d['id'];  ?>">Editar</a> </td>
-                <td><a href="index.php?mod=delciudad&&id=<?php  echo $d['id'];  ?>">Borrar</a> </td>
+                <td><a class="btn btn-secondary" href="index.php?mod=edtciudad&&id=<?php  echo $d['Id'];  ?>">Editar</a> </td>
+                <td><a class="btn btn-danger" href="index.php?mod=delciudad&&id=<?php  echo $d['Id'];  ?>">Borrar</a> </td>
             </tr>
                <?php 
                }

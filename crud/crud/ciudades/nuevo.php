@@ -29,16 +29,16 @@ if ($_GET and $_GET['id'])
     <h3><?php echo $titulo; ?></h3>
     <div>
         <form action="ciudades/guardar.php" method="post">
-           <label>Nonbre de la ciudad</label><br>
-           <input type="hidden" id="id" name="id" value="<?php 
-           echo $dato['id'];
+           <label style="color:black" >Nombre de la ciudad:</label><br>
+           <input type="hidden" id="Id" name="id" value="<?php 
+           echo $dato['Id'];
             ?>" />
            <input type="text" id="nombre" name="nombre" required value="<?php 
           // if (isset($dato['nombre'])) { echo $dato['nombre']; }
            echo $dato['nombre'];
             ?>" /> <br>
-           <button type="submit">Enviar</button>
-           <a href="index.php?mod=ciudades">Volver</a>    
+           <button type="submit" class="btn btn-success">Enviar</button>
+           <a href="index.php?mod=ciudades" class="btn btn-secondary">Volver</a>    
 
         </form>
 
