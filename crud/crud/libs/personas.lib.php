@@ -19,7 +19,7 @@ function agregarPersona($datos,$con)
 }
 function editarPersona($datos,$con)
 {
-    // update personas set nombre = CAMPO where id= ID
+   // update personas set nombre = CAMPO where id= ID
   $sql="update personas set nombre ='".$datos['nombre']."' " 
             .", apellido =  '".$datos['apellido']."' " 
             .", cin =  '".$datos['cin']."' "    
@@ -40,15 +40,15 @@ function borrarPersona($id,$con)
 function validarPersonas($dato)
   {
     $errores=[];
-    /* 
-           $dato['id']=-1;
+     
+        $dato['id']=-1;
         $dato['nombre']="";
         $dato['apellido']="";
         $dato['cin']="";
         $dato['direccion']="";
         $dato['fecha_nac']="";
         $dato['ciudad_id']="";
-    */
+    
     if (empty($dato['id'])) 
       {
         array_push($errores, "El campo id debe estar definido");
