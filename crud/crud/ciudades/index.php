@@ -34,11 +34,12 @@ $datos=traerCiudades($conn);
                 foreach($datos as $d) {
                 ?>
              <tr>    
-                <td><?php echo $d['Id'];  ?> </td>
+                <td><?php echo $d['id'];  ?> </td>
                 <td><?php echo $d['nombre'];  ?></td>
-                <td><a class="btn btn-secondary" href="index.php?mod=edtciudad&&id=<?php  echo $d['Id'];  ?>">Editar</a> </td>
-                <td><a class="btn btn-danger" href="index.php?mod=delciudad&&id=<?php  echo $d['Id'];  ?>">Borrar</a> </td>
+                <td><a class="btn btn-secondary" href="index.php?mod=edtciudad&&id=<?php  echo $d['id'];  ?>">Editar</a> </td>
+                <td><a class="btn btn-danger" href="index.php?mod=delciudad&&id=<?php  echo $d['id'];  ?>">Borrar</a> </td>
             </tr>
+            //cambie el id ahora pq en la bd que había creado anteriormente estaba en mayúscula y no la cambié antes pq sigo sin notebook
                <?php 
                }
                ?> 
@@ -46,3 +47,4 @@ $datos=traerCiudades($conn);
     </table>
 </body>
 </html>
+
