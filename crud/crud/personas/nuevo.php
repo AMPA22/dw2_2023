@@ -29,7 +29,7 @@ if ($_GET and $_GET['id'])
     <h3><?php echo $titulo; ?></h3>
     <div>
         <form action="ciudades/guardar.php" method="post">
-           <label>Nonbre de la ciudad</label><br>
+           <label>Nombre de la ciudad</label><br>
            <input type="hidden" id="id" name="id" value="<?php 
            echo $dato['id'];
             ?>" />
