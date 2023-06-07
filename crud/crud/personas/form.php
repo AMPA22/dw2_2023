@@ -12,14 +12,14 @@ if ($_GET and isset($_GET['id']))
        // echo "</pre>";
     } else 
     {
-        $dato['id']=-1;
+      /*  $dato['id']=-1;
         $dato['nombre']="";
         $dato['apellido']="";
         $dato['cin']="";
         $dato['direccion']="";
         $dato['fecha_nac']="";
         $dato['ciudad_id']="";
-    }
+   */ }
   $cdatos=traerCiudades($conn);
 
 ?>
